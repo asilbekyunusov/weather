@@ -1,0 +1,9 @@
+config:
+  target: "http://51.20.42.153"
+  phases:
+  - duration: 30
+    arrivalRate: 50
+scenarios:
+  - flow:
+      - get:
+          url: "/"
