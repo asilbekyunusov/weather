@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 10px 0px 40px;
+  background-color: rgb(234, 234, 234);
+}
+.container_of_infos {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.searchInput {
+  margin-top: 10px;
+  margin-left: 40%;
+  width: 300px;
+  height: 40px;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/* .ketmon {
+	width: 100%;
+} */
+
+.card-container {
+	margin: auto;
+  display: grid;
+	grid-template-columns: repeat(8, 150px);
+  overflow-x: scroll;
+  width: 900px;
+  gap: 20px;
+}
+
+.card-section::-webkit-scrollbar {
+  display: none;
+}
+
+.hour-card {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.hour-card img {
+	width: 50px;
+}
+
+#error {
+  color: red;
+}
