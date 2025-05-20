@@ -4,62 +4,107 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
 main {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   width: 100%;
-  padding: 10px 0px 40px;
-  background-color: rgb(234, 234, 234);
+  padding: 20px 0;
 }
-.container_of_infos {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
 
 .searchInput {
-  margin-top: 10px;
-  margin-left: 40%;
-  width: 300px;
+  margin: 10px 0;
+  width: 80%;
+  max-width: 400px;
   height: 40px;
   border-radius: 10px;
-  padding: 5px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
 }
-
-/* .ketmon {
-	width: 100%;
-} */
 
 .card-container {
-	margin: auto;
-  display: grid;
-	grid-template-columns: repeat(8, 150px);
-  overflow-x: scroll;
-  width: 900px;
-  gap: 20px;
+  display: flex;
+  overflow-x: auto;
+  width: 90%;
+  max-width: 1200px;
+  gap: 15px;
+  padding: 10px 0;
+  scrollbar-width: thin; /* Firefox */
+  scrollbar-color: #888 #f4f4f4; /* Firefox */
 }
 
-.card-section::-webkit-scrollbar {
-  display: none;
+.card-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 4px;
+}
+
+.card-container::-webkit-scrollbar-track {
+  background-color: #f4f4f4;
 }
 
 .hour-card {
-  width: 150px;
+  min-width: 120px;
   height: 150px;
-  border: 1px solid black;
+  background: #fff;
   border-radius: 10px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 10px;
 }
 
 .hour-card img {
-	width: 50px;
+  width: 40px;
+  height: 40px;
+}
+
+.hour-card p {
+  margin: 5px 0;
+  font-size: 14px;
 }
 
 #error {
   color: red;
+  text-align: center;
+  margin: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .searchInput {
+    width: 90%;
+    font-size: 14px;
+  }
+
+  .card-container {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .hour-card {
+    min-width: 100px;
+    height: 130px;
+  }
+
+  .hour-card img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .hour-card p {
+    font-size: 12px;
+  }
 }
