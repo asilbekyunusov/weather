@@ -6,37 +6,108 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f0f2f5;
+  color: #333;
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-  padding: 20px 0;
+  padding: 20px;
+  min-height: 100vh;
 }
 
 .searchInput {
-  margin: 10px 0;
   width: 80%;
   max-width: 400px;
-  height: 40px;
-  border-radius: 10px;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
+  height: 50px;
+  padding: 10px;
+  border-radius: 25px;
+  border: 2px solid #1da1f2;
   font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.searchInput:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 10px rgba(29, 161, 242, 0.5);
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card h4 {
+  font-size: 24px;
+  color: #1da1f2;
+}
+
+.card .weather-icon {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.card .temp {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.card .condition {
+  color: #7f8c8d;
+}
+
+.container_of_infos {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  color: #34495e;
+}
+
+.hour-card {
+  width: 100px;
+  height: 120px;
+  background: #fff;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.hour-card:hover {
+  transform: scale(1.05);
 }
 
 .card-container {
   display: flex;
-  overflow-x: auto;
-  width: 90%;
-  max-width: 1200px;
   gap: 15px;
-  padding: 10px 0;
-  scrollbar-width: thin; /* Firefox */
-  scrollbar-color: #888 #f4f4f4; /* Firefox */
+  overflow-x: auto;
+  padding: 20px 0;
+  width: 90%;
+  max-width: 1000px;
 }
 
 .card-container::-webkit-scrollbar {
@@ -44,67 +115,27 @@ main {
 }
 
 .card-container::-webkit-scrollbar-thumb {
-  background-color: #888;
-  border-radius: 4px;
+  background: #1da1f2;
+  border-radius: 10px;
 }
 
 .card-container::-webkit-scrollbar-track {
-  background-color: #f4f4f4;
+  background: #f0f2f5;
 }
 
-.hour-card {
-  min-width: 120px;
-  height: 150px;
-  background: #fff;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  padding: 10px;
-}
-
-.hour-card img {
-  width: 40px;
-  height: 40px;
-}
-
-.hour-card p {
-  margin: 5px 0;
-  font-size: 14px;
-}
-
-#error {
-  color: red;
-  text-align: center;
-  margin: 10px;
-}
-
-/* Mobile responsiveness */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .searchInput {
     width: 90%;
-    font-size: 14px;
   }
-
-  .card-container {
-    width: 100%;
-    justify-content: flex-start;
+  .card {
+    width: 95%;
   }
-
+  .container_of_infos {
+    flex-direction: column;
+    gap: 10px;
+  }
   .hour-card {
-    min-width: 100px;
-    height: 130px;
-  }
-
-  .hour-card img {
-    width: 30px;
-    height: 30px;
-  }
-
-  .hour-card p {
-    font-size: 12px;
+    width: 80px;
+    height: 100px;
   }
 }
